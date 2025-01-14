@@ -19,3 +19,24 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Asset Fonts */
+@font-face {
+  font-family: 'Font1';
+  src: url('/assets/font/font1.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Font2';
+  src: url('/assets/font/font2.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Font3';
+  src: url('/assets/font/font3.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Font4';
+  src: url('/assets/font/font4.woff2') format('woff2');
+}

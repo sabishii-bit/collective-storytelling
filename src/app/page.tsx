@@ -1,6 +1,11 @@
+import Banner from "./components/Banner/Banner";
+import About from "./components/About/About";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div></div>
+    <>
+      <Banner />
+      <About />
+    </>
   );
 }

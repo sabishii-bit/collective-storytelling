@@ -1,0 +1,73 @@
+.banner {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 49.125rem;
+    background: url('/assets/img/banner.webp') center/cover no-repeat;
+    letter-spacing: normal;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+  
+  .overlay {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.25); /* Semi-transparent dark overlay */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 1.25rem;
+  }
+
+  .title {
+    font-size: 3.875rem;
+    font-family: Lato, arial, sans-serif;
+  }
+  
+  .subtitle {
+    font-size: 1.375rem;
+    margin-bottom: 2rem;
+    font-family: Lusitana, Georgia, serif;
+  }
+
+  .logo {
+    top: 1rem;
+    position: absolute;
+    font-size: 1.25rem;
+    font-family: Lato, arial, sans-serif;
+    text-align: center;
+    color: white;
+    letter-spacing: 0.1rem;
+    margin-bottom: 1rem;
+    line-height: 130%;
+    width: 23.125rem;
+  }
+  
+  .button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-family: Lusitana, Georgia, serif;
+    border-radius: 1px;
+  }
+  
+  .button:hover {
+    background-color: #c9c9c9;
+  }
+  
+  .line {
+    width: 50%;
+    height: 1px;
+    background-color: white;
+    margin: 1rem ;
+  }
+  
