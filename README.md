@@ -24,37 +24,18 @@ cd repository
 npm install
 ```
 
-## Running Local Development Server
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
 ## Building the Project
 
 ```bash
 npm run build
 ```
 
-Static files will be generated in the `public_html` directory for deployment.
+Static files will be generated in the `out` directory for deployment.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Hosting on GoDaddy
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Log in to your GoDaddy account.
+2. Navigate to My Products > Web Hosting and open your hosting control panel.
+3. Use the File Manager or an FTP client (like FileZilla) to upload the contents of the `out` directory to the `public_html` directory on your hosting server.
+4. In the DNS Management section of your GoDaddy account, ensure the A record for your domain points to your hosting server's IP address.
+5. Once uploaded, your website should be live and accessible through your domain.
