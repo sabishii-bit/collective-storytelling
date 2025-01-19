@@ -1,0 +1,11 @@
+# Allow all user agents
+User-agent: *
+
+# Disallow sensitive pages or directories (e.g., Contact Form submissions if they shouldn't be indexed)
+Disallow: /contact/
+
+# Allow all other pages to be indexed
+Allow: /
+
+# Sitemap for better indexing
+Sitemap: https://collectivestorytelling.com/sitemap.xml
