@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './About.module.scss';
+import Image from 'next/image';
 
 const About: React.FC = () => {
   return (
@@ -11,7 +12,7 @@ const About: React.FC = () => {
 
             <div className={styles.slide}>
               <div className={styles.image_container}>
-                <img className={styles.image} src="/assets/img/stock2.webp"></img>
+                <Image className={styles.image} src="/assets/img/stock2.webp" alt=""></Image>
               </div>
               <div className={styles.slide_split}></div>
               <div className={styles.slide_description}>
@@ -27,13 +28,13 @@ const About: React.FC = () => {
               </div>
               <div className={styles.slide_split}></div>
               <div className={styles.image_container}>
-                <img className={styles.image} src="/assets/img/stock1.webp"></img>
+                <Image className={styles.image} src="/assets/img/stock1.webp" alt=""></Image>
               </div>
             </div>
 
             <div className={styles.slide}>
               <div className={styles.image_container}>
-                <img className={styles.image} src="/assets/img/banner.webp"></img>
+                <Image className={styles.image} src="/assets/img/banner.webp" alt=""></Image>
               </div>
               <div className={styles.slide_split}></div>
               <div className={styles.slide_description}>
