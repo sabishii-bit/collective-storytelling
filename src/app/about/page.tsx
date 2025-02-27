@@ -1,9 +1,9 @@
 import CopyrightDisclaimer from "@/components/CopyrightDisclaimer/CopyrightDisclaimer";
 
-export default function LosAngelesWildfireVictimsPage() {
+export default function AboutUsPage() {
     return (
       <>
-        TODO: Implement Wildfire Victims Support Page
+        TODO: Implement About Us Page
         <CopyrightDisclaimer />
       </>
     );

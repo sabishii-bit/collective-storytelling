@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://collectivestorytelling.com
+
+# Sitemaps
+Sitemap: https://collectivestorytelling.com/sitemap.xml
