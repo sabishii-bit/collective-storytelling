@@ -16,7 +16,7 @@ export default function UpcomingEventsPage() {
       title: 'Bourbon Barrel Raffle',
       date: 'April 25-30, 2025',
       location: 'Online Event',
-      image: '/assets/img/stock5.webp',
+      image: '/assets/img/BourbonBarrel.jpg',
       description: 'Join us for our annual Bourbon Barrel Raffle fundraiser. Win exceptional bourbon while supporting fundraising initiatives.',
       registrationLink: '#',
       category: 'Fundraiser'
@@ -26,7 +26,7 @@ export default function UpcomingEventsPage() {
       title: 'Napa Storytelling Event',
       date: 'May 16-18, 2025',
       location: 'Napa Valley, California',
-      image: '/assets/img/stock6.webp',
+      image: '/assets/img/Napa.jpg',
       description: 'Experience the magic of storytelling in the beautiful Napa Valley. This three-day event features workshops, performances, and wine tastings.',
       registrationLink: '#',
       category: 'Event'
