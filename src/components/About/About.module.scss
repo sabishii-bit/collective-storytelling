@@ -21,6 +21,18 @@
     }
 }
 
+.divider {
+    width: 100%;
+    height: 1px;
+    background-color: #ddd;
+    margin: 0.25rem 0 2rem 0;
+}
+
+.animatedDivider {
+    width: 100%;
+    display: block !important; /* Override the inline-block from AnimatedComponent */
+}
+
 .slide {
     margin-top: 32px;
     display: flex;

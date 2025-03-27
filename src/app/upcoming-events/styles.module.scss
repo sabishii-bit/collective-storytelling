@@ -1,0 +1,329 @@
+.container {
+  padding: 0 5%;
+  max-width: 1200px;
+  margin: 2rem auto 4rem;
+  
+  @media (max-width: 768px) {
+    margin: 1rem auto 3rem;
+  }
+}
+
+.heroSection {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.pageTitle {
+  font-family: Lato, Arial, sans-serif;
+  font-size: 2.5rem;
+  color: #1B1B1B;
+  margin-bottom: 0.5rem;
+  
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: #ddd;
+  margin: 0.25rem 0 1.5rem 0;
+}
+
+.animatedDivider {
+  width: 100%;
+  display: block !important;
+}
+
+.heroText {
+  font-family: Lusitana, Georgia, serif;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #444;
+  max-width: 800px;
+  margin: 0 auto;
+  
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
+  }
+}
+
+.sectionTitle {
+  font-family: Lato, Arial, sans-serif;
+  font-size: 1.75rem;
+  color: #1B1B1B;
+  margin-bottom: 1.5rem;
+  
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+}
+
+.featuredSection {
+  margin-bottom: 4rem;
+}
+
+.featuredGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.featuredEvent {
+  display: flex;
+  background: #f8f8f8;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.featuredImageContainer {
+  width: 40%;
+  
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 250px;
+  }
+}
+
+.featuredImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.featuredContent {
+  width: 60%;
+  padding: 2rem;
+  
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 1.5rem;
+  }
+}
+
+.eventTitle {
+  font-family: Lato, Arial, sans-serif;
+  font-size: 1.5rem;
+  color: #1B1B1B;
+  margin-bottom: 0.75rem;
+  
+  @media (max-width: 768px) {
+    font-size: 1.3rem;
+  }
+}
+
+.eventMeta {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+  font-family: Lato, Arial, sans-serif;
+  font-size: 0.9rem;
+  color: #666;
+  flex-wrap: wrap;
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  
+  .eventCategory {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background-color: rgba(27, 27, 27, 0.08);
+    border-radius: 4px;
+    font-family: Lato, Arial, sans-serif;
+    font-size: 0.8rem;
+    color: #444;
+  }
+}
+
+.eventDate, .eventLocation {
+  display: flex;
+  align-items: center;
+}
+
+.eventDescription {
+  font-family: Lusitana, Georgia, serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 1.5rem;
+}
+
+.registerButton {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #1B1B1B;
+  color: white;
+  font-family: Lato, Arial, sans-serif;
+  font-size: 0.9rem;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+  
+  &:hover {
+    background-color: #333;
+  }
+}
+
+.calendarSection {
+  margin-bottom: 4rem;
+}
+
+.eventsList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.eventCard {
+  background: #f8f8f8;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.eventHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+
+.eventCardTitle {
+  font-family: Lato, Arial, sans-serif;
+  font-size: 1.2rem;
+  color: #1B1B1B;
+  margin: 0;
+  
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
+  }
+}
+
+.eventCardMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 1rem;
+  font-family: Lato, Arial, sans-serif;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.eventCardDate, .eventCardLocation {
+  margin: 0;
+}
+
+.eventCardDescription {
+  font-family: Lusitana, Georgia, serif;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+.detailsLink {
+  font-family: Lato, Arial, sans-serif;
+  font-size: 0.9rem;
+  color: #1B1B1B;
+  text-decoration: none;
+  font-weight: 600;
+  
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.subscribeSection {
+  margin-bottom: 2rem;
+}
+
+.subscribeCard {
+  background: linear-gradient(135deg, #1B1B1B 0%, #333 100%);
+  border-radius: 8px;
+  padding: 2.5rem;
+  color: white;
+  text-align: center;
+  
+  @media (max-width: 768px) {
+    padding: 2rem 1.5rem;
+  }
+}
+
+.subscribeTitle {
+  font-family: Lato, Arial, sans-serif;
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+.subscribeText {
+  font-family: Lusitana, Georgia, serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.subscribeForm {
+  display: flex;
+  max-width: 500px;
+  margin: 0 auto;
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+.emailInput {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 4px 0 0 4px;
+  font-family: Lato, Arial, sans-serif;
+  font-size: 1rem;
+  
+  @media (max-width: 768px) {
+    border-radius: 4px;
+  }
+}
+
+.subscribeButton {
+  padding: 0.75rem 1.5rem;
+  background-color: white;
+  color: #1B1B1B;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  font-family: Lato, Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  
+  &:hover {
+    background-color: #f0f0f0;
+  }
+  
+  @media (max-width: 768px) {
+    border-radius: 4px;
+  }
+} 

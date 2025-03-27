@@ -48,22 +48,16 @@ const NavigationMenu: React.FC = () => {
             Home
           </button>
           <button
-            onClick={() => handleNavigation("/about")}
+            onClick={() => handleNavigation("/who-we-are")}
             className="block text-lg text-left hover:text-gray-400"
           >
-            About
+            Who We Are
           </button>
           <button
-            onClick={() => handleNavigation("/donate")}
+            onClick={() => handleNavigation("/upcoming-events")}
             className="block text-lg text-left hover:text-gray-400"
           >
-            Donations
-          </button>
-          <button
-            onClick={() => handleNavigation("/los-angeles-wildfires")}
-            className="block text-lg text-left hover:text-gray-400"
-          >
-            Los Angeles Wildfires
+            Upcoming Events
           </button>
         </nav>
       </div>

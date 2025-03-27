@@ -1,0 +1,185 @@
+.container {
+  padding: 0 5%;
+  max-width: 1200px;
+  margin: 2rem auto 4rem;
+  
+  @media (max-width: 768px) {
+    margin: 1rem auto 3rem;
+  }
+}
+
+.heroSection {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.pageTitle {
+  font-family: Lato, Arial, sans-serif;
+  font-size: 2.5rem;
+  color: #1B1B1B;
+  margin-bottom: 0.5rem;
+  
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: #ddd;
+  margin: 0.25rem 0 1rem 0;
+}
+
+.animatedDivider {
+  width: 100%;
+  display: block !important;
+}
+
+.sectionTitle {
+  font-family: Lato, Arial, sans-serif;
+  font-size: 1.75rem;
+  color: #1B1B1B;
+  margin-bottom: 1.5rem;
+  
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+}
+
+.sectionText {
+  font-family: Lusitana, Georgia, serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 1.5rem;
+  
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
+}
+
+.missionSection {
+  margin-bottom: 4rem;
+}
+
+.teamSection {
+  margin-bottom: 4rem;
+}
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.teamMember {
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  height: 100%;
+}
+
+.memberImageContainer {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
+.memberImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.memberInfo {
+  padding: 1.5rem;
+}
+
+.memberName {
+  font-family: Lato, Arial, sans-serif;
+  font-size: 1.25rem;
+  color: #1B1B1B;
+  margin-bottom: 0.25rem;
+}
+
+.memberRole {
+  font-family: Lato, Arial, sans-serif;
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.memberBio {
+  font-family: Lusitana, Georgia, serif;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #444;
+}
+
+.valuesSection {
+  margin-bottom: 2rem;
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+.valueItem {
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.valueTitle {
+  font-family: Lato, Arial, sans-serif;
+  font-size: 1.2rem;
+  color: #1B1B1B;
+  margin-bottom: 0.75rem;
+}
+
+.valueText {
+  font-family: Lusitana, Georgia, serif;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #444;
+}
+
+.memberContact {
+  font-family: Lato, Arial, sans-serif;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.memberEmail {
+  color: #0066cc;
+  text-decoration: none;
+  transition: color 0.2s;
+  
+  &:hover {
+    text-decoration: underline;
+    color: #004c99;
+  }
+} 

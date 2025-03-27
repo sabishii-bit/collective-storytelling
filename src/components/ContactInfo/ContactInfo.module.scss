@@ -1,0 +1,62 @@
+.contactWrapper {
+  padding: 40px 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contactInfo {
+  background-color: #f5f5f7;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.contactTitle {
+  font-family: Lato, Arial, sans-serif;
+  font-size: 1.5rem;
+  color: #1B1B1B;
+  margin-bottom: 1.5rem;
+  
+  @media (max-width: 768px) {
+    font-size: 1.25rem;
+  }
+}
+
+.contactDetails {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+
+.contactItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contactLabel {
+  font-family: Lato, Arial, sans-serif;
+  font-size: 1.1rem;
+  color: #1B1B1B;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.contactValue {
+  font-family: Lusitana, Georgia, serif;
+  font-size: 1rem;
+  color: #0066cc;
+  text-decoration: none;
+  transition: color 0.2s;
+  
+  &:hover {
+    text-decoration: underline;
+    color: #004c99;
+  }
+} 
