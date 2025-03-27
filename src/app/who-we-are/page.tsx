@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import AnimatedComponent from '@/components/AnimatedComponent/AnimatedComponent';
 import CopyrightDisclaimer from '@/components/CopyrightDisclaimer/CopyrightDisclaimer';
 import styles from './styles.module.scss';
@@ -60,10 +61,12 @@ export default function WhoWeArePage() {
               >
                 <div className={styles.teamMember}>
                   <div className={styles.memberImageContainer}>
-                    <img 
+                    <Image 
                       src={member.image} 
                       alt={member.name} 
-                      className={styles.memberImage} 
+                      className={styles.memberImage}
+                      width={300}
+                      height={300}
                     />
                   </div>
                   <div className={styles.memberInfo}>

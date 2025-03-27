@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import AnimatedComponent from '@/components/AnimatedComponent/AnimatedComponent';
 import CopyrightDisclaimer from '@/components/CopyrightDisclaimer/CopyrightDisclaimer';
 import styles from './styles.module.scss';
@@ -61,7 +62,13 @@ export default function UpcomingEventsPage() {
               <AnimatedComponent key={event.id} direction={index % 2 === 0 ? 'left' : 'right'}>
                 <div className={styles.featuredEvent}>
                   <div className={styles.featuredImageContainer}>
-                    <img src={event.image} alt={event.title} className={styles.featuredImage} />
+                    <Image 
+                      src={event.image} 
+                      alt={event.title} 
+                      className={styles.featuredImage}
+                      width={500}
+                      height={300} 
+                    />
                   </div>
                   <div className={styles.featuredContent}>
                     <h3 className={styles.eventTitle}>{event.title}</h3>

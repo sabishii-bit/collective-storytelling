@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState, useEffect, useCallback } from 'react';
+import Image from 'next/image';
 import styles from './ImageSlideshow.module.scss';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
@@ -73,7 +74,16 @@ const ImageSlideshow: React.FC<ImageSlideshowProps> = ({
             className={`${styles.slide} ${index === currentSlide ? styles.active : ''}`}
             style={{ transform: `translateX(${(index - currentSlide) * 100}%)` }}
           >
-            <img src={image.src} alt={image.alt} className={styles.slideImage} />
+            <div className={styles.imageContainer}>
+              <Image 
+                src={image.src} 
+                alt={image.alt} 
+                fill
+                sizes="(max-width: 768px) 100vw, 1200px"
+                style={{ objectFit: 'cover' }}
+                priority={index === 0}
+              />
+            </div>
             {image.caption && (
               <div className={styles.caption}>{image.caption}</div>
             )}

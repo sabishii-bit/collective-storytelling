@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import styles from './About.module.scss';
 import AnimatedComponent from '@/components/AnimatedComponent/AnimatedComponent';
 
@@ -17,7 +18,13 @@ const About: React.FC = () => {
             <AnimatedComponent direction='left'>
               <div className={styles.slide}>
                 <div className={styles.image_container}>
-                  <img className={styles.image} src="/assets/img/stock2.webp" alt="Our Mission" />
+                  <Image 
+                    className={styles.image} 
+                    src="/assets/img/stock2.webp" 
+                    alt="Our Mission" 
+                    width={400}
+                    height={300}
+                  />
                 </div>
                 <div className={styles.slide_split}></div>
                 <div className={styles.slide_description}>
@@ -35,7 +42,13 @@ const About: React.FC = () => {
                 </div>
                 <div className={styles.slide_split}></div>
                 <div className={styles.image_container}>
-                  <img className={styles.image} src="/assets/img/stock1.webp" alt="Our Expertise" />
+                  <Image 
+                    className={styles.image} 
+                    src="/assets/img/stock1.webp" 
+                    alt="Our Expertise" 
+                    width={400}
+                    height={300}
+                  />
                 </div>
               </div>
             </AnimatedComponent>
@@ -43,7 +56,13 @@ const About: React.FC = () => {
             <AnimatedComponent direction='left'>
               <div className={styles.slide}>
                 <div className={styles.image_container}>
-                  <img className={styles.image} src="/assets/img/banner.webp" alt="Our Approach" />
+                  <Image 
+                    className={styles.image} 
+                    src="/assets/img/banner.webp" 
+                    alt="Our Approach" 
+                    width={400}
+                    height={300}
+                  />
                 </div>
                 <div className={styles.slide_split}></div>
                 <div className={styles.slide_description}>
