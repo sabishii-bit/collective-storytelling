@@ -20,7 +20,7 @@ const About: React.FC = () => {
                 <div className={styles.image_container}>
                   <Image 
                     className={styles.image} 
-                    src="/assets/img/stock2.webp" 
+                    src="/assets/img/EventPhoto9.jpg" 
                     alt="Our Mission" 
                     width={400}
                     height={300}
@@ -44,7 +44,7 @@ const About: React.FC = () => {
                 <div className={styles.image_container}>
                   <Image 
                     className={styles.image} 
-                    src="/assets/img/stock1.webp" 
+                    src="/assets/img/EventPhoto3.jpg" 
                     alt="Our Expertise" 
                     width={400}
                     height={300}
@@ -58,7 +58,7 @@ const About: React.FC = () => {
                 <div className={styles.image_container}>
                   <Image 
                     className={styles.image} 
-                    src="/assets/img/banner.webp" 
+                    src="/assets/img/EventPhoto8.jpg" 
                     alt="Our Approach" 
                     width={400}
                     height={300}

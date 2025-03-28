@@ -15,19 +15,19 @@ export default function WhoWeArePage() {
       name: 'Robert Rowe',
       role: 'President',
       email: 'rob@collectivestorytelling.com',
-      image: '/assets/img/RobPortrait.jpg'
+      image: '/assets/img/stock1.webp'
     },
     {
       name: 'Rebecca Rowe',
       role: 'Vice President',
       email: 'Beckrowe@gmail.com',
-      image: '/assets/img/RebeccaPortrait.jpg'
+      image: '/assets/img/stock2.webp'
     },
     {
       name: 'Kathy Pinol',
       role: 'Chief Operations Officer',
       email: 'kathy@collectivestorytelling.com',
-      image: '/assets/img/KathyPortrait.jpg'
+      image: '/assets/img/stock3.webp'
     }
   ];
 

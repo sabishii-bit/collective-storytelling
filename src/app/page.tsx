@@ -7,27 +7,39 @@ import ContactInfo from "@/components/ContactInfo/ContactInfo";
 export default function HomePage() {
   const slideshowImages = [
     {
-      src: '/assets/img/stock1.webp',
+      src: '/assets/img/EventPhoto1.jpg',
       alt: 'Community members collaborating on a storytelling project',
     },
     {
-      src: '/assets/img/stock2.webp',
+      src: '/assets/img/EventPhoto2.jpg',
       alt: 'Group brainstorming session',
     },
     {
-      src: '/assets/img/stock3.webp',
+      src: '/assets/img/EventPhoto10.jpg',
       alt: 'Community gathering',
     },
     {
-      src: '/assets/img/stock4.webp',
+      src: '/assets/img/EventPhoto4.jpg',
       alt: 'Cultural celebration',
     },
     {
-      src: '/assets/img/stock5.webp',
+      src: '/assets/img/EventPhoto5.jpg',
       alt: 'Story recording session',
     },
     {
-      src: '/assets/img/stock6.webp',
+      src: '/assets/img/EventPhoto6.jpg',
+      alt: 'Community workshop',
+    },
+    {
+      src: '/assets/img/EventPhoto7.jpg',
+      alt: 'Community workshop',
+    },
+    {
+      src: '/assets/img/EventPhoto8.jpg',
+      alt: 'Community workshop',
+    },
+    {
+      src: '/assets/img/EventPhoto11.jpg',
       alt: 'Community workshop',
     }
   ];
