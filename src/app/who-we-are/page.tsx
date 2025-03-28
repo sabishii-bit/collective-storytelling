@@ -15,7 +15,7 @@ export default function WhoWeArePage() {
       name: 'Robert Rowe',
       role: 'President',
       email: 'rob@collectivestorytelling.com',
-      image: '/assets/img/RobertPortrait.jpg'
+      image: '/assets/img/RobPortrait.jpg'
     },
     {
       name: 'Rebecca Rowe',
