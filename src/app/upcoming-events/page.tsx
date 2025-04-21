@@ -24,7 +24,7 @@ export default function UpcomingEventsPage() {
     },
     {
       id: 2,
-      title: 'Napa Storytelling Event',
+      title: 'Napa Storytelling Fundraiser',
       date: 'May 17-18, 2025',
       location: 'Napa Valley, California',
       image: '/assets/img/Napa.jpg',
