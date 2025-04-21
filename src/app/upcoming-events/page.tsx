@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import { FaFilePdf } from 'react-icons/fa';
 import AnimatedComponent from '@/components/AnimatedComponent/AnimatedComponent';
 import CopyrightDisclaimer from '@/components/CopyrightDisclaimer/CopyrightDisclaimer';
 import styles from './styles.module.scss';
@@ -24,11 +25,12 @@ export default function UpcomingEventsPage() {
     {
       id: 2,
       title: 'Napa Storytelling Event',
-      date: 'May 16-18, 2025',
+      date: 'May 17-18, 2025',
       location: 'Napa Valley, California',
       image: '/assets/img/Napa.jpg',
-      description: 'Experience the magic of storytelling in the beautiful Napa Valley. This three-day event features workshops, performances, and wine tastings.',
+      description: 'Experience the magic of storytelling in the beautiful Napa Valley. This two-day event features a storytelling panel, performances, wine, bourbon, scotch, cheese and chocolate tastings.',
       registrationLink: '#',
+      pdfLink: '/assets/pdf/Napa_2025_Fundraiser.pdf',
       category: 'Event'
     }
   ];
@@ -77,6 +79,18 @@ export default function UpcomingEventsPage() {
                       <p className={styles.eventLocation}>{event.location}</p>
                     </div>
                     <p className={styles.eventDescription}>{event.description}</p>
+                    {event.pdfLink && (
+                      <div className={styles.eventActions}>
+                        <a 
+                          href={event.pdfLink} 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className={styles.eventButton}
+                        >
+                          <FaFilePdf className={styles.buttonIcon} /> Event Details
+                        </a>
+                      </div>
+                    )}
                   </div>
                 </div>
               </AnimatedComponent>
