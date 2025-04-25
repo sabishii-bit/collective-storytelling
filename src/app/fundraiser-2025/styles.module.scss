@@ -526,4 +526,56 @@
   @media (max-width: 768px) {
     font-size: 0.9rem;
   }
+}
+
+.locationLink {
+  color: #444;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+  display: block;
+  margin-left: 15px;
+  padding-left: 5px;
+  border-left: 2px solid #f0f0f0;
+  
+  p {
+    margin: 0.3rem 0;
+  }
+  
+  &::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: -2px;
+    background-color: #0066cc;
+    transition: width 0.3s ease;
+  }
+  
+  &:hover {
+    color: #0066cc;
+    
+    &::after {
+      width: 2px;
+    }
+    
+    p {
+      color: #0066cc;
+    }
+  }
+  
+  &::before {
+    content: "📍";
+    font-size: 0.9em;
+    position: absolute;
+    left: -25px;
+    top: 0.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  &:hover::before {
+    opacity: 1;
+  }
 } 

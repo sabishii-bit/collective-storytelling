@@ -242,9 +242,19 @@ export default function Fundraiser2025Page() {
                   <h3 className={styles.ticketDetailsTitle}>Event Details</h3>
                   <p className={styles.ticketDetailsText}><strong>Date:</strong> May 17, 2025</p>
                   <p className={styles.ticketDetailsText}><strong>Time:</strong> 11:00 AM - 4:00 PM PDT</p>
-                  <p className={styles.ticketDetailsText}><strong>Location:</strong> FREEMARK ABBEY</p>
-                  <p className={styles.ticketDetailsText}>3022 St. Helena Highway North St</p>
-                  <p className={styles.ticketDetailsText}>Helena, CA 94574</p>
+                  <p className={styles.ticketDetailsText}><strong>Location:</strong></p>
+                  <a 
+                    href="https://maps.app.goo.gl/EW6reVihtL66tECJ9" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className={styles.locationLink}
+                  >
+                    <p className={styles.ticketDetailsText}>FREEMARK ABBEY</p>
+                    <p className={styles.ticketDetailsText}>
+                      3022 St. Helena Highway North St<br/>
+                      Helena, CA 94574
+                    </p>
+                  </a>
                 </div>
               </AnimatedComponent>
               
