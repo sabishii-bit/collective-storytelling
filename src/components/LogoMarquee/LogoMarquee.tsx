@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Marquee from 'react-fast-marquee';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -38,6 +38,8 @@ const LogoMarquee: React.FC<LogoMarqueeProps> = ({
   // Track screen size
   const [isMobile, setIsMobile] = useState(false);
   const [isTablet, setIsTablet] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   // Determine which data to use based on dataSource prop
   const logosData = dataSource === 'distilleries' ? distilleries : wineries;
@@ -60,6 +62,64 @@ const LogoMarquee: React.FC<LogoMarqueeProps> = ({
     
     // Clean up
     return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
+
+  // Force visibility after component mount
+  useEffect(() => {
+    // Pre-load all images
+    const preloadImages = async () => {
+      const imagePromises = logosData.map((logo) => {
+        return new Promise((resolve, reject) => {
+          const img = new window.Image();
+          img.src = logo.logoSrc;
+          img.onload = resolve;
+          img.onerror = reject;
+        });
+      });
+      
+      try {
+        // Wait for all images to load
+        await Promise.all(imagePromises);
+        // Then make component visible
+        setIsVisible(true);
+      } catch (error) {
+        // If any images fail to load, still show the component
+        console.error('Error preloading some logo images:', error);
+        setIsVisible(true);
+      }
+    };
+    
+    preloadImages();
+    
+    // Fallback in case preloading takes too long
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 1000);
+    
+    return () => clearTimeout(timer);
+  }, [logosData]);
+
+  // Use Intersection Observer to detect when marquee is in viewport
+  useEffect(() => {
+    if (!containerRef.current) return;
+    
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // Force a re-render when the marquee becomes visible
+            setIsVisible(true);
+            // Once it's visible, we don't need to observe anymore
+            observer.disconnect();
+          }
+        });
+      },
+      { threshold: 0.1 } // Trigger when at least 10% is visible
+    );
+    
+    observer.observe(containerRef.current);
+    
+    return () => observer.disconnect();
   }, []);
 
   // Adjust push and scale amounts based on screen size
@@ -150,7 +210,11 @@ const LogoMarquee: React.FC<LogoMarqueeProps> = ({
   };
 
   return (
-    <div className={`${styles.logoMarqueeContainer} ${className}`}>
+    <div 
+      className={`${styles.logoMarqueeContainer} ${className}`} 
+      ref={containerRef}
+      style={{ visibility: isVisible ? 'visible' : 'hidden' }}
+    >
       {/* Fade edges for smooth entrance/exit */}
       <div 
         className={`${styles.fadeEdge} ${styles.fadeLeft}`}
@@ -201,6 +265,9 @@ const LogoMarquee: React.FC<LogoMarqueeProps> = ({
                 style={{ 
                   opacity: getLogoOpacity(index)
                 }}
+                priority={index < 5}
+                loading="eager"
+                unoptimized={true}
               />
             </div>
           </Link>
