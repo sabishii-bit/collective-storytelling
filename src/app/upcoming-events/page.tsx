@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { FaFilePdf } from 'react-icons/fa';
 import AnimatedComponent from '@/components/AnimatedComponent/AnimatedComponent';
 import CopyrightDisclaimer from '@/components/CopyrightDisclaimer/CopyrightDisclaimer';
+import LogoMarquee from '@/components/LogoMarquee';
 import styles from './styles.module.scss';
 
 export const metadata = {
@@ -98,6 +99,15 @@ export default function UpcomingEventsPage() {
           </div>
         </section>
       </div>
+      <LogoMarquee 
+        speed={100}
+        pauseOnHover={true}
+        gradientColor="transparent"
+        gradientWidth={0}
+        logoWidth={180}
+        logoHeight={120}
+        fadeEdgeColor="#fff"
+      />
       <CopyrightDisclaimer />
     </>
   );

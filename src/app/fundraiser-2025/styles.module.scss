@@ -1,0 +1,529 @@
+.container {
+  padding: 0 5%;
+  max-width: 1200px;
+  margin: 2rem auto 4rem;
+  
+  @media (max-width: 768px) {
+    margin: 1rem auto 3rem;
+  }
+}
+
+.heroSection {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.pageTitle {
+    font-family: Lato, Arial, sans-serif;
+    font-size: 2.5rem;
+    color: #1B1B1B;
+    margin-bottom: 0.5rem;
+    
+    @media (max-width: 768px) {
+      font-size: 2rem;
+    }
+  }
+
+.subtitle {
+  font-family: Lusitana, Georgia, serif;
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #444;
+  margin: 0.5rem auto 1rem;
+  max-width: 90%;
+  line-height: 1.5;
+  
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: #ddd;
+  margin: 0.25rem 0 1rem 0;
+}
+
+.animatedDivider {
+  width: 100%;
+  display: block !important;
+}
+
+.sectionTitle {
+  font-family: 'Lusitana', Georgia, serif;
+  font-size: 2rem;
+  color: #1B1B1B;
+  margin-bottom: 1.8rem;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  font-weight: 400;
+  font-style: italic;
+  position: relative;
+  display: inline-block;
+  
+  &::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 60px;
+    background: linear-gradient(to right, #0066cc, transparent);
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  @media (max-width: 768px) {
+    font-size: 1.7rem;
+    letter-spacing: 0.01em;
+    margin-bottom: 1.5rem;
+    
+    &::after {
+      width: 50px;
+    }
+  }
+}
+
+.sectionText {
+  font-family: Lusitana, Georgia, serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 1.5rem;
+  
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
+}
+
+.infoSection {
+  margin-bottom: 4rem;
+}
+
+.goalsSection {
+  margin-bottom: 4rem;
+}
+
+.goalsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.goalItem {
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  height: 100%;
+}
+
+.goalTitle {
+  font-family: Lato, Arial, sans-serif;
+  font-size: 1.25rem;
+  color: #1B1B1B;
+  margin-bottom: 0.75rem;
+}
+
+.goalText {
+  font-family: Lusitana, Georgia, serif;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #444;
+}
+
+.donateSection {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.ctaContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+  gap: 1rem;
+  
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+.ctaButton {
+  display: inline-block;
+  background-color: #0066cc;
+  color: white;
+  font-family: Lato, Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background-color 0.2s, transform 0.2s;
+  
+  &:hover {
+    background-color: #004c99;
+    transform: translateY(-2px);
+  }
+}
+
+.ctaLink {
+  display: inline-block;
+  color: #0066cc;
+  font-family: Lato, Arial, sans-serif;
+  font-size: 1rem;
+  text-decoration: none;
+  margin-left: 1rem;
+  transition: color 0.2s;
+  
+  &:hover {
+    color: #004c99;
+    text-decoration: underline;
+  }
+  
+  @media (max-width: 768px) {
+    margin-left: 0;
+  }
+}
+
+.panelSection {
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.panelGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+.centeredLastItem {
+  width: 100%;
+  max-width: 450px;
+  margin: 2rem auto 0;
+  
+  @media (max-width: 768px) {
+    max-width: 100%;
+    margin-top: 1.5rem;
+  }
+}
+
+.panelMember {
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  height: 100%;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border 0.3s ease;
+  border: 1px solid transparent;
+  
+  &:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    background-color: #ffffff;
+    position: relative;
+    z-index: 5;
+  }
+}
+
+.panelName {
+  font-family: Lato, Arial, sans-serif;
+  font-size: 1.4rem;
+  color: #1B1B1B;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
+  letter-spacing: 0.02em;
+  
+  @media (max-width: 768px) {
+    font-size: 1.25rem;
+  }
+}
+
+.panelRole {
+  font-family: Lusitana, Georgia, serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: #666;
+  line-height: 1.4;
+  transition: color 0.3s ease;
+  
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+  }
+}
+
+.panelLink {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+  position: relative;
+  
+  &::before {
+    content: "→";
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.2rem;
+    color: #0066cc;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateX(-5px);
+  }
+  
+  &::after {
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #0066cc;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-family: Lato, Arial, sans-serif;
+    font-weight: 600;
+  }
+  
+  &:hover {
+    text-decoration: none;
+    color: inherit;
+    
+    .panelName {
+      color: #0066cc;
+    }
+    
+    .panelRole {
+      color: #333;
+    }
+    
+    .panelMember {
+      border: 1px solid #0066cc;
+    }
+    
+    &::after {
+      opacity: 1;
+    }
+    
+    &::before {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
+
+.nonClickable {
+  background-color: #f1f1f1;
+  border: 1px solid #e8e8e8;
+  
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+    background-color: #f1f1f1;
+  }
+}
+
+.honorSection {
+  text-align: center;
+  margin: 2rem 0;
+  padding: 1rem;
+}
+
+.honorLink {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+  position: relative;
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-3px);
+    
+    .honorNote {
+      color: #0066cc;
+      
+      &::before, &::after {
+        background: linear-gradient(to right, transparent, #0066cc, transparent);
+      }
+    }
+    
+    &::after {
+      position: absolute;
+      bottom: -2rem;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #0066cc;
+      font-family: Lato, Arial, sans-serif;
+      font-weight: 500;
+      font-style: normal;
+    }
+  }
+}
+
+.honorNote {
+  font-family: 'Lusitana', Georgia, serif;
+  font-size: 1.25rem;
+  font-style: italic;
+  color: #555;
+  position: relative;
+  display: inline-block;
+  padding: 0 3rem;
+  transition: color 0.3s ease;
+  
+  &::before, &::after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #aaa, transparent);
+    width: 60%;
+    left: 20%;
+    transition: background 0.3s ease;
+  }
+  
+  &::before {
+    top: -1rem;
+  }
+  
+  &::after {
+    bottom: -1rem;
+  }
+  
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
+    padding: 0 1.5rem;
+  }
+}
+
+// Ticket section styles
+.ticketSection {
+  margin: 0 auto 4rem;
+  text-align: center;
+  max-width: 1000px;
+  padding: 0 1rem;
+}
+
+.ticketContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+.ticketInfo, .ticketPurchase {
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  text-align: left;
+  
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+  }
+}
+
+.ticketDetailsTitle {
+  font-family: Lato, Arial, sans-serif;
+  font-size: 1.4rem;
+  color: #1B1B1B;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+  }
+}
+
+.ticketDetailsText {
+  font-family: Lusitana, Georgia, serif;
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+  
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
+}
+
+.ticketDescription {
+  font-family: Lusitana, Georgia, serif;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 1.5rem;
+  
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
+}
+
+.ticketButton {
+  display: inline-block;
+  background-color: #0066cc;
+  color: white;
+  font-family: Lato, Arial, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 0.85rem 2.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 0.5rem 0 1.5rem;
+  
+  &:hover {
+    background-color: #004c99;
+    transform: translateY(-3px);
+    box-shadow: 0 7px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    padding: 0.75rem 2rem;
+  }
+}
+
+.ticketPrice {
+  font-family: Lato, Arial, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1B1B1B;
+  margin: 1rem 0 0.5rem;
+  
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
+  }
+}
+
+.ticketAdditional {
+  font-family: Lusitana, Georgia, serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: #666;
+  
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+  }
+} 

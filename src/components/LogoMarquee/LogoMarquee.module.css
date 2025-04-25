@@ -1,0 +1,115 @@
+.logoMarqueeContainer {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  min-height: 120px; /* Default for mobile */
+  display: flex;
+  align-items: center;
+}
+
+/* Edge fade effect containers */
+.fadeEdge {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 60px; /* Smaller for mobile */
+  pointer-events: none;
+  z-index: 2;
+}
+
+.fadeLeft {
+  left: 0;
+  background: linear-gradient(to right, white, transparent);
+}
+
+.fadeRight {
+  right: 0;
+  background: linear-gradient(to left, white, transparent);
+}
+
+.logoItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.75rem; /* Smaller padding for mobile */
+  transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+  height: 100px; /* Smaller height for mobile */
+  width: 160px; /* Smaller width for mobile */
+  position: relative;
+  will-change: transform; /* Optimize performance for animations */
+}
+
+.logoImageContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 6px;
+  transition: background-color 0.4s ease;
+}
+
+.logoItem:hover .logoImageContainer {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Default state */
+.logoImage {
+  opacity: 0.85;
+  transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+  max-height: 80px; /* Smaller for mobile */
+  max-width: 120px; /* Smaller for mobile */
+  object-fit: contain;
+  width: auto !important;
+  height: auto !important;
+}
+
+/* Hover state */
+.logoItem:hover .logoImage {
+  opacity: 1;
+}
+
+/* Responsive styles - tablet */
+@media (min-width: 768px) {
+  .logoMarqueeContainer {
+    min-height: 140px;
+  }
+  
+  .fadeEdge {
+    width: 80px;
+  }
+  
+  .logoItem {
+    padding: 0 1rem;
+    height: 120px;
+    width: 200px;
+  }
+  
+  .logoImage {
+    max-height: 100px;
+    max-width: 160px;
+  }
+}
+
+/* Responsive styles - desktop */
+@media (min-width: 1024px) {
+  .logoMarqueeContainer {
+    min-height: 160px;
+  }
+  
+  .fadeEdge {
+    width: 100px;
+  }
+  
+  .logoItem {
+    padding: 0 1.5rem;
+    height: 140px;
+    width: 240px;
+  }
+  
+  .logoImage {
+    max-height: 120px;
+    max-width: 200px;
+  }
+} 

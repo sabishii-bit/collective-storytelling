@@ -59,6 +59,12 @@ const NavigationMenu: React.FC = () => {
           >
             Upcoming Events
           </button>
+          <button
+            onClick={() => handleNavigation("/fundraiser-2025")}
+            className="block text-lg text-left hover:text-gray-400"
+          >
+            2025 Napa Fundraiser
+          </button>
         </nav>
       </div>
 
