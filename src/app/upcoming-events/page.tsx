@@ -3,7 +3,6 @@ import Image from 'next/image';
 import { FaFilePdf } from 'react-icons/fa';
 import AnimatedComponent from '@/components/AnimatedComponent/AnimatedComponent';
 import CopyrightDisclaimer from '@/components/CopyrightDisclaimer/CopyrightDisclaimer';
-import LogoMarquee from '@/components/LogoMarquee';
 import styles from './styles.module.scss';
 
 export const metadata = {
