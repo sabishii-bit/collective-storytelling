@@ -19,7 +19,7 @@ export default function Fundraiser2025Page() {
           </AnimatedComponent>
           <AnimatedComponent direction='top' delay={0.1}>
             <p className={styles.subtitle}>
-              "A Rare Intersection of the Wine, Cheese, Whiskey, Chocolate, Music, Entertainment, and Culinary Worlds, All Tied Together Through Storytelling"
+              &ldquo;A Rare Intersection of the Wine, Cheese, Whiskey, Chocolate, Music, Entertainment, and Culinary Worlds, All Tied Together Through Storytelling&rdquo;
             </p>
           </AnimatedComponent>
           <AnimatedComponent direction='top' className={styles.animatedDivider}>
@@ -35,7 +35,7 @@ export default function Fundraiser2025Page() {
                 <a href="https://www.iwerksandco.com/about-us" target="_blank" rel="noopener noreferrer" className={styles.panelLink}>
                   <div className={styles.panelMember}>
                     <h3 className={styles.panelName}>Leslie Iwerks</h3>
-                    <p className={styles.panelRole}>Film Maker & Moderator</p>
+                    <p className={styles.panelRole}>Film Maker &amp; Moderator</p>
                   </div>
                 </a>
               </AnimatedComponent>
@@ -44,7 +44,7 @@ export default function Fundraiser2025Page() {
                 <a href="https://en.m.wikipedia.org/wiki/Floyd_Norman" target="_blank" rel="noopener noreferrer" className={styles.panelLink}>
                   <div className={styles.panelMember}>
                     <h3 className={styles.panelName}>Floyd Norman</h3>
-                    <p className={styles.panelRole}>Storyteller & Animator</p>
+                    <p className={styles.panelRole}>Storyteller &amp; Animator</p>
                   </div>
                 </a>
               </AnimatedComponent>
@@ -53,7 +53,7 @@ export default function Fundraiser2025Page() {
                 <a href="https://hamiltonmusical.fandom.com/wiki/Isaiah_Johnson" target="_blank" rel="noopener noreferrer" className={styles.panelLink}>
                   <div className={styles.panelMember}>
                     <h3 className={styles.panelName}>Isaiah Johnson</h3>
-                    <p className={styles.panelRole}>Actor, Musician & Educator</p>
+                    <p className={styles.panelRole}>Actor, Musician &amp; Educator</p>
                   </div>
                 </a>
               </AnimatedComponent>
@@ -78,7 +78,7 @@ export default function Fundraiser2025Page() {
                 <a href="https://www.alexmandelmusic.com/" target="_blank" rel="noopener noreferrer" className={styles.panelLink}>
                   <div className={styles.panelMember}>
                     <h3 className={styles.panelName}>Alex Mandel</h3>
-                    <p className={styles.panelRole}>Songwriter & Composer, Pixar's Brave, The Inventor</p>
+                    <p className={styles.panelRole}>Songwriter &amp; Composer, Pixar&apos;s Brave, The Inventor</p>
                   </div>
                 </a>
               </AnimatedComponent>
@@ -87,7 +87,7 @@ export default function Fundraiser2025Page() {
                 <a href="https://hamiltonmusical.fandom.com/wiki/Isaiah_Johnson" target="_blank" rel="noopener noreferrer" className={styles.panelLink}>
                   <div className={styles.panelMember}>
                     <h3 className={styles.panelName}>Isaiah Johnson</h3>
-                    <p className={styles.panelRole}>Actor & Singer, Hamilton</p>
+                    <p className={styles.panelRole}>Actor &amp; Singer, Hamilton</p>
                   </div>
                 </a>
               </AnimatedComponent>
@@ -95,8 +95,8 @@ export default function Fundraiser2025Page() {
               <AnimatedComponent direction='left' delay={0.3}>
                 <a href="https://www.pianocinema.com/" target="_blank" rel="noopener noreferrer" className={styles.panelLink}>
                   <div className={styles.panelMember}>
-                    <h3 className={styles.panelName}>Harold O'Neal</h3>
-                    <p className={styles.panelRole}>Special Music Guest & Director</p>
+                    <h3 className={styles.panelName}>Harold O&apos;Neal</h3>
+                    <p className={styles.panelRole}>Special Music Guest &amp; Director</p>
                   </div>
                 </a>
               </AnimatedComponent>
@@ -122,7 +122,7 @@ export default function Fundraiser2025Page() {
               <AnimatedComponent direction='right' delay={0.4}>
                 <a href="https://www.instagram.com/dakilaband/" target="_blank" rel="noopener noreferrer" className={styles.panelLink}>
                   <div className={styles.panelMember}>
-                    <h3 className={styles.panelName}>Dave Bustamante & Bobby Santos</h3>
+                    <h3 className={styles.panelName}>Dave Bustamante &amp; Bobby Santos</h3>
                     <p className={styles.panelRole}>Music Duo</p>
                   </div>
                 </a>
@@ -132,7 +132,7 @@ export default function Fundraiser2025Page() {
             <div className={styles.centeredLastItem}>
               <AnimatedComponent direction='bottom' delay={0.4}>
                 <div className={`${styles.panelMember} ${styles.nonClickable}`}>
-                  <h3 className={styles.panelName}>Pixar & Mixed Musicians</h3>
+                  <h3 className={styles.panelName}>Pixar &amp; Mixed Musicians</h3>
                   <p className={styles.panelRole}>Collection of Talented Musicians</p>
                 </div>
               </AnimatedComponent>
@@ -156,7 +156,7 @@ export default function Fundraiser2025Page() {
               <AnimatedComponent direction='right' delay={0.2}>
                 <a href="https://givingtogether.ucsf.edu/fundraiser/3339955" target="_blank" rel="noopener noreferrer" className={styles.panelLink}>
                   <div className={styles.panelMember}>
-                    <h3 className={styles.panelName}>Oakland and Louisville Children's Hospitals</h3>
+                    <h3 className={styles.panelName}>Oakland and Louisville Children&apos;s Hospitals</h3>
                     <p className={styles.panelRole}>Healthcare support for children in need</p>
                   </div>
                 </a>
@@ -263,7 +263,7 @@ export default function Fundraiser2025Page() {
                   <p className={styles.ticketDescription}>
                     Join us for a spectacular event featuring special storytelling panels, 
                     fantastic music guests, and tastings of cheese, wine, chocolate, bourbon, 
-                    and appetizers. Don't miss our silent and live auctions!
+                    and appetizers. Don&apos;t miss our silent and live auctions!
                   </p>
                   <a 
                     href="https://csgi.betterworld.org/events/collective-storytelling-group-n" 
@@ -288,7 +288,7 @@ export default function Fundraiser2025Page() {
         <AnimatedComponent direction='bottom' delay={0.2}>
           <a href="https://www.cartoonbrew.com/animators/adam-burke-veteran-pixar-animator-dies-165139.html" target="_blank" rel="noopener noreferrer" className={styles.honorLink}>
             <p className={styles.honorNote}>
-              In honor of Adam Burke - Pixar Animator & Children's Hospital Advocate
+              In honor of Adam Burke - Pixar Animator &amp; Children&apos;s Hospital Advocate
             </p>
           </a>
         </AnimatedComponent>
