@@ -149,24 +149,26 @@ const LogoMarquee: React.FC<LogoMarqueeProps> = ({
     if (hoveredIndex === null) return '';
     
     let baseTransform = '';
+    const totalLogos = logosData.length;
     
-    // If this is the hovered logo, scale it up
-    if (index === hoveredIndex) {
+    // Calculate relative position with circular wrapping
+    // For example, if hovering last item, first item is considered "next"
+    const relativePosition = (totalLogos + index - hoveredIndex) % totalLogos;
+    
+    // If this is the hovered logo
+    if (relativePosition === 0) {
       baseTransform = 'scale(1.2)';
     }
-    
-    // If this is the logo to the left of the hovered logo, push it left and shrink it
-    else if (index === hoveredIndex - 1) {
+    // If this is the logo to the "left" of the hovered logo (could be last item if first is hovered)
+    else if (relativePosition === totalLogos - 1) {
       baseTransform = 'translateX(-25px) scale(0.85)';
     }
-    
-    // If this is the logo to the right of the hovered logo, push it right and shrink it
-    else if (index === hoveredIndex + 1) {
+    // If this is the logo to the "right" of the hovered logo (could be first item if last is hovered)
+    else if (relativePosition === 1) {
       baseTransform = 'translateX(25px) scale(0.85)';
     }
-    
-    // For logos that are two positions away, add a slight effect
-    else if (index === hoveredIndex - 2 || index === hoveredIndex + 2) {
+    // For logos that are two positions away (with circular wrapping)
+    else if (relativePosition === totalLogos - 2 || relativePosition === 2) {
       baseTransform = 'scale(0.95)';
     }
     
@@ -177,11 +179,14 @@ const LogoMarquee: React.FC<LogoMarqueeProps> = ({
   const getLogoOpacity = (index: number) => {
     if (hoveredIndex === null) return 0.85;
     
-    if (index === hoveredIndex) {
+    const totalLogos = logosData.length;
+    const relativePosition = (totalLogos + index - hoveredIndex) % totalLogos;
+    
+    if (relativePosition === 0) {
       return 1;
     }
     
-    if (index === hoveredIndex - 1 || index === hoveredIndex + 1) {
+    if (relativePosition === 1 || relativePosition === totalLogos - 1) {
       return 0.7;
     }
     
