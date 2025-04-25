@@ -99,15 +99,6 @@ export default function UpcomingEventsPage() {
           </div>
         </section>
       </div>
-      <LogoMarquee 
-        speed={100}
-        pauseOnHover={true}
-        gradientColor="transparent"
-        gradientWidth={0}
-        logoWidth={180}
-        logoHeight={120}
-        fadeEdgeColor="#fff"
-      />
       <CopyrightDisclaimer />
     </>
   );
