@@ -27,6 +27,54 @@ export default function Fundraiser2025Page() {
           </AnimatedComponent>
         </div>
 
+        <section className={styles.ticketSection}>
+          <AnimatedComponent direction='top'>
+            <h2 className={styles.sectionTitle}>purchase tickets</h2>
+            <div className={styles.ticketContent}>
+              <AnimatedComponent direction='left' delay={0.1}>
+                <div className={styles.ticketInfo}>
+                  <h3 className={styles.ticketDetailsTitle}>Event Details</h3>
+                  <p className={styles.ticketDetailsText}><strong>Date:</strong> May 17, 2025</p>
+                  <p className={styles.ticketDetailsText}><strong>Time:</strong> 11:00 AM - 5:00 PM PDT</p>
+                  <p className={styles.ticketDetailsText}><strong>Location:</strong></p>
+                  <a 
+                    href="https://maps.app.goo.gl/EW6reVihtL66tECJ9" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className={styles.locationLink}
+                  >
+                    <p className={styles.ticketDetailsText}>FREEMARK ABBEY</p>
+                    <p className={styles.ticketDetailsText}>
+                      3022 St. Helena Highway North St<br/>
+                      Helena, CA 94574
+                    </p>
+                  </a>
+                </div>
+              </AnimatedComponent>
+              
+              <AnimatedComponent direction='right' delay={0.2}>
+                <div className={styles.ticketPurchase}>
+                  <p className={styles.ticketDescription}>
+                    Join us for a spectacular event featuring special storytelling panels, 
+                    fantastic music guests, and tastings of cheese, wine, chocolate, bourbon, 
+                    and appetizers. Don&apos;t miss our silent and live auctions!
+                  </p>
+                  <a 
+                    href="https://csgi.betterworld.org/events/collective-storytelling-group-n" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className={styles.ticketButton}
+                  >
+                    Purchase Tickets
+                  </a>
+                  <p className={styles.ticketPrice}>General Admission: $200</p>
+                  <p className={styles.ticketAdditional}>Special tastings and add-ons available during checkout</p>
+                </div>
+              </AnimatedComponent>
+            </div>
+          </AnimatedComponent>
+        </section>
+
         <section className={styles.panelSection}>
           <AnimatedComponent direction='top'>
             <h2 className={styles.sectionTitle}>storytelling panel</h2>
@@ -219,6 +267,22 @@ export default function Fundraiser2025Page() {
         
         <section className={styles.panelSection}>
           <AnimatedComponent direction='top'>
+            <h2 className={styles.sectionTitle}>featured chocolatiers</h2>
+          </AnimatedComponent>
+            <LogoMarquee 
+                speed={100}
+                pauseOnHover={true}
+                gradientColor="transparent"
+                gradientWidth={0}
+                logoWidth={180}
+                logoHeight={120}
+                fadeEdgeColor="#fff"
+                dataSource="chocolatiers"
+            />
+        </section>
+        
+        <section className={styles.panelSection}>
+          <AnimatedComponent direction='top'>
             <h2 className={styles.sectionTitle}>invited distilleries</h2>
           </AnimatedComponent>
             <LogoMarquee 
@@ -232,57 +296,7 @@ export default function Fundraiser2025Page() {
                 dataSource="distilleries"
             />
         </section>
-        
-        <section className={styles.ticketSection}>
-          <AnimatedComponent direction='top'>
-            <h2 className={styles.sectionTitle}>purchase tickets</h2>
-            <div className={styles.ticketContent}>
-              <AnimatedComponent direction='left' delay={0.1}>
-                <div className={styles.ticketInfo}>
-                  <h3 className={styles.ticketDetailsTitle}>Event Details</h3>
-                  <p className={styles.ticketDetailsText}><strong>Date:</strong> May 17, 2025</p>
-                  <p className={styles.ticketDetailsText}><strong>Time:</strong> 11:00 AM - 4:00 PM PDT</p>
-                  <p className={styles.ticketDetailsText}><strong>Location:</strong></p>
-                  <a 
-                    href="https://maps.app.goo.gl/EW6reVihtL66tECJ9" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className={styles.locationLink}
-                  >
-                    <p className={styles.ticketDetailsText}>FREEMARK ABBEY</p>
-                    <p className={styles.ticketDetailsText}>
-                      3022 St. Helena Highway North St<br/>
-                      Helena, CA 94574
-                    </p>
-                  </a>
-                </div>
-              </AnimatedComponent>
-              
-              <AnimatedComponent direction='right' delay={0.2}>
-                <div className={styles.ticketPurchase}>
-                  <p className={styles.ticketDescription}>
-                    Join us for a spectacular event featuring special storytelling panels, 
-                    fantastic music guests, and tastings of cheese, wine, chocolate, bourbon, 
-                    and appetizers. Don&apos;t miss our silent and live auctions!
-                  </p>
-                  <a 
-                    href="https://csgi.betterworld.org/events/collective-storytelling-group-n" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className={styles.ticketButton}
-                  >
-                    Purchase Tickets
-                  </a>
-                  <p className={styles.ticketPrice}>General Admission: $200</p>
-                  <p className={styles.ticketAdditional}>Special tastings and add-ons available during checkout</p>
-                </div>
-              </AnimatedComponent>
-            </div>
-          </AnimatedComponent>
-        </section>
       </div>
-      
-      
       
       <div className={styles.honorSection}>
         <AnimatedComponent direction='bottom' delay={0.2}>

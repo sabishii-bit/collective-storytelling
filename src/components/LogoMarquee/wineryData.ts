@@ -11,11 +11,6 @@ export const wineries: WineryData[] = [
     url: "https://www.ballettovineyards.com/"
   },
   {
-    name: "Shafer Vineyards",
-    logoSrc: "/assets/img/2025_Event/winery_logos/Shafer.png",
-    url: "https://www.shafervineyards.com/"
-  },
-  {
     name: "Gaderian Wines",
     logoSrc: "/assets/img/2025_Event/winery_logos/GaderianWines.avif",
     url: "https://www.gaderianwines.com/"
@@ -89,11 +84,6 @@ export const wineries: WineryData[] = [
     name: "Fleury Estate Winery",
     logoSrc: "/assets/img/2025_Event/winery_logos/FleuryEstateWinery.png",
     url: "https://fleurywinery.com/"
-  },
-  {
-    name: "La Crema Winery",
-    logoSrc: "/assets/img/2025_Event/winery_logos/LaCrema.png",
-    url: "https://www.lacrema.com/"
   },
   {
     name: "La Jota Vineyard",

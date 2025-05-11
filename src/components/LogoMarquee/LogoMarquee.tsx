@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { wineries } from './wineryData';
 import { distilleries } from './distilleryData';
+import { chocolatiers } from './chocolatierData';
 import styles from './LogoMarquee.module.css';
 
 interface LogoMarqueeProps {
@@ -18,7 +19,7 @@ interface LogoMarqueeProps {
   logoHeight?: number;
   logoWidth?: number;
   fadeEdgeColor?: string;
-  dataSource?: 'wineries' | 'distilleries';
+  dataSource?: 'wineries' | 'distilleries' | 'chocolatiers';
 }
 
 const LogoMarquee: React.FC<LogoMarqueeProps> = ({ 
@@ -42,7 +43,11 @@ const LogoMarquee: React.FC<LogoMarqueeProps> = ({
   const containerRef = useRef<HTMLDivElement>(null);
 
   // Determine which data to use based on dataSource prop
-  const logosData = dataSource === 'distilleries' ? distilleries : wineries;
+  const logosData = dataSource === 'distilleries' 
+    ? distilleries 
+    : dataSource === 'chocolatiers'
+      ? chocolatiers
+      : wineries;
 
   // Determine if gradient should be shown
   const showGradient = gradientWidth > 0 && gradientColor !== 'transparent';
