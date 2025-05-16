@@ -246,6 +246,17 @@ export default function Fundraiser2025Page() {
                 </a>
               </AnimatedComponent>
             </div>
+            
+            <div className={styles.centeredLastItem}>
+              <AnimatedComponent direction='bottom' delay={0.7}>
+                <a href="https://www.boomersbuddies.com/" target="_blank" rel="noopener noreferrer" className={styles.panelLink}>
+                  <div className={styles.panelMember}>
+                    <h3 className={styles.panelName}>Boomer's Buddies</h3>
+                    <p className={styles.panelRole}>Animal rescue helping vulnerable pets find forever homes</p>
+                  </div>
+                </a>
+              </AnimatedComponent>
+            </div>
           </AnimatedComponent>
         </section>
         
