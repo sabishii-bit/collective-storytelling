@@ -251,7 +251,7 @@ export default function Fundraiser2025Page() {
               <AnimatedComponent direction='bottom' delay={0.7}>
                 <a href="https://www.boomersbuddies.com/" target="_blank" rel="noopener noreferrer" className={styles.panelLink}>
                   <div className={styles.panelMember}>
-                    <h3 className={styles.panelName}>Boomer's Buddies</h3>
+                    <h3 className={styles.panelName}>Boomer&apos;s Buddies</h3>
                     <p className={styles.panelRole}>Animal rescue helping vulnerable pets find forever homes</p>
                   </div>
                 </a>
