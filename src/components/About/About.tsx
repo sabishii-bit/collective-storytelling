@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import styles from './About.module.scss';
+import PasswordEntry from '../Restricted/PasswordEntry';
 import AnimatedComponent from '@/components/AnimatedComponent/AnimatedComponent';
 
 const About: React.FC = () => {

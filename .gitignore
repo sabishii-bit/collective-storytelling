@@ -25,6 +25,7 @@
 .DS_Store
 *.pem
 info.txt
+*CLAUDE.md
 
 # debug
 npm-debug.log*
