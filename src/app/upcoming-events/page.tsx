@@ -14,24 +14,13 @@ export default function UpcomingEventsPage() {
   const upcomingEvents = [
     {
       id: 1,
-      title: 'Bourbon Barrel Raffle',
-      date: 'April 25-30, 2025',
-      location: 'Online Event',
-      image: '/assets/img/BourbonBarrel.jpg',
-      description: 'Join us for our annual Bourbon Barrel Raffle fundraiser. Win exceptional bourbon while supporting fundraising initiatives.',
+      title: '2nd Annual Collective Storytelling Golf & Fundraiser',
+      date: 'October 24th, 2025',
+      location: '',
+      image: '/assets/img/Golf.jpg',
+      description: 'Please join us on October 24 for an afternoon of golf and an evening of storytelling. We start with an 8 hole golf scramble tournament and finish with our main storytelling event. You will hear some great stories from our panel, taste amazing wine and bourbon which will be paired with wonderful cheese and chocolates. The event will host a silent auction and raffle to raise money for Children’s Hospital and supporting mental health.',
       registrationLink: '#',
       category: 'Fundraiser'
-    },
-    {
-      id: 2,
-      title: 'Napa Storytelling Fundraiser',
-      date: 'May 17-18, 2025',
-      location: 'Napa Valley, California',
-      image: '/assets/img/Napa.jpg',
-      description: 'Experience the magic of storytelling in the beautiful Napa Valley. This two-day event features a storytelling panel, performances, wine, bourbon, scotch, cheese and chocolate tastings.',
-      registrationLink: '#',
-      pdfLink: '/assets/pdf/Napa_2025_Fundraiser.pdf',
-      category: 'Event'
     }
   ];
 
@@ -79,18 +68,6 @@ export default function UpcomingEventsPage() {
                       <p className={styles.eventLocation}>{event.location}</p>
                     </div>
                     <p className={styles.eventDescription}>{event.description}</p>
-                    {event.pdfLink && (
-                      <div className={styles.eventActions}>
-                        <a 
-                          href={event.pdfLink} 
-                          target="_blank" 
-                          rel="noopener noreferrer" 
-                          className={styles.eventButton}
-                        >
-                          <FaFilePdf className={styles.buttonIcon} /> Event Details
-                        </a>
-                      </div>
-                    )}
                   </div>
                 </div>
               </AnimatedComponent>
