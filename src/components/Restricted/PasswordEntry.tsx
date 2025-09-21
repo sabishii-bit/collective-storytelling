@@ -51,7 +51,7 @@ const PasswordEntry: React.FC<PasswordEntryProps> = ({
         setError(errorMessage);
         onError?.(errorMessage);
       }
-    } catch (err) {
+    } catch {
       const errorMessage = 'Network error occurred';
       setError(errorMessage);
       onError?.(errorMessage);

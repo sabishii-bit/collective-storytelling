@@ -75,7 +75,7 @@ export async function GET(request: NextRequest) {
     }
     
     return NextResponse.json({ authenticated: false });
-  } catch (error) {
+  } catch {
     return NextResponse.json({ authenticated: false });
   }
 }

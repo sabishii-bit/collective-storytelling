@@ -1,6 +1,5 @@
 import React from 'react';
 import Image from 'next/image';
-import { FaFilePdf } from 'react-icons/fa';
 import AnimatedComponent from '@/components/AnimatedComponent/AnimatedComponent';
 import CopyrightDisclaimer from '@/components/CopyrightDisclaimer/CopyrightDisclaimer';
 import styles from './styles.module.scss';
