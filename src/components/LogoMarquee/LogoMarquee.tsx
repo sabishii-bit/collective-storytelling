@@ -58,25 +58,25 @@ const LogoMarquee: React.FC<LogoMarqueeProps> = ({
             ? golfSponsors
             : wineries;
 
-  // Calculate how many logos we need to fill the marquee without gaps
-  const getOptimalLogoCount = () => {
-    if (typeof window === 'undefined') return baseLogosData.length;
-
-    const screenWidth = window.innerWidth;
-    const logoSpacing = logoWidth + 40; // Logo width + margin
-    const minLogosNeeded = Math.ceil(screenWidth / logoSpacing) + 3; // +3 for smooth scrolling
-
-    // If we have enough logos, use original count
-    if (baseLogosData.length >= minLogosNeeded) {
-      return baseLogosData.length;
-    }
-
-    // Otherwise, calculate how many times to duplicate
-    return Math.ceil(minLogosNeeded / baseLogosData.length) * baseLogosData.length;
-  };
-
   // Create duplicated logos array to fill the marquee
   const logosData = React.useMemo(() => {
+    // Calculate how many logos we need to fill the marquee without gaps
+    const getOptimalLogoCount = () => {
+      if (typeof window === 'undefined') return baseLogosData.length;
+
+      const screenWidth = window.innerWidth;
+      const logoSpacing = logoWidth + 40; // Logo width + margin
+      const minLogosNeeded = Math.ceil(screenWidth / logoSpacing) + 3; // +3 for smooth scrolling
+
+      // If we have enough logos, use original count
+      if (baseLogosData.length >= minLogosNeeded) {
+        return baseLogosData.length;
+      }
+
+      // Otherwise, calculate how many times to duplicate
+      return Math.ceil(minLogosNeeded / baseLogosData.length) * baseLogosData.length;
+    };
+
     const optimalCount = getOptimalLogoCount();
     const duplicationsNeeded = Math.ceil(optimalCount / baseLogosData.length);
 
