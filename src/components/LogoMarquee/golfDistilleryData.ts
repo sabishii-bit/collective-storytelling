@@ -24,5 +24,20 @@ export const golfDistilleries: GolfDistilleryData[] = [
     name: "Buffalo Trace",
     logoSrc: "/assets/img/2025_Event/distillery_logos/BuffaloTrace.jpg",
     url: "https://www.buffalotracedistillery.com/"
+  },
+  {
+    name: "Jefferson's Bourbon",
+    logoSrc: "/assets/img/2025_Event/distillery_logos/JeffersonsBourbon.svg",
+    url: "https://www.jeffersonsbourbon.com/"
+  },
+  {
+    name: "Napa Cigar Society",
+    logoSrc: "/assets/img/2025_Event/distillery_logos/NapaCigarSociety.webp",
+    url: "https://www.napacigarsociety.com/"
+  },
+  {
+    name: "Rabbit Hole",
+    logoSrc: "/assets/img/2025_Event/distillery_logos/RabbitHole.svg",
+    url: "https://www.rabbitholedistillery.com/"
   }
 ];

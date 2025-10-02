@@ -59,14 +59,9 @@ export default function Fundraiser2025Page() {
                     fantastic music guests, and tastings of cheese, wine, chocolate, bourbon, 
                     and appetizers. Don&apos;t miss our silent and live auctions!
                   </p>
-                  <a 
-                    href="https://csgi.betterworld.org/events/collective-storytelling-group-n" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className={styles.ticketButton}
-                  >
+                  <span className={`${styles.ticketButton} ${styles.disabled}`}>
                     Purchase Tickets
-                  </a>
+                  </span>
                   <p className={styles.ticketPrice}>General Admission: $200</p>
                   <p className={styles.ticketAdditional}>Special tastings and add-ons available during checkout</p>
                 </div>
