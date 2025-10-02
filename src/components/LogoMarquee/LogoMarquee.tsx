@@ -46,7 +46,7 @@ const LogoMarquee: React.FC<LogoMarqueeProps> = ({
   const containerRef = useRef<HTMLDivElement>(null);
 
   // Determine which data to use based on dataSource prop
-  const logosData = dataSource === 'distilleries'
+  const baseLogosData = dataSource === 'distilleries'
     ? distilleries
     : dataSource === 'chocolatiers'
       ? chocolatiers
@@ -57,6 +57,45 @@ const LogoMarquee: React.FC<LogoMarqueeProps> = ({
           : dataSource === 'golfSponsors'
             ? golfSponsors
             : wineries;
+
+  // Calculate how many logos we need to fill the marquee without gaps
+  const getOptimalLogoCount = () => {
+    if (typeof window === 'undefined') return baseLogosData.length;
+
+    const screenWidth = window.innerWidth;
+    const logoSpacing = logoWidth + 40; // Logo width + margin
+    const minLogosNeeded = Math.ceil(screenWidth / logoSpacing) + 3; // +3 for smooth scrolling
+
+    // If we have enough logos, use original count
+    if (baseLogosData.length >= minLogosNeeded) {
+      return baseLogosData.length;
+    }
+
+    // Otherwise, calculate how many times to duplicate
+    return Math.ceil(minLogosNeeded / baseLogosData.length) * baseLogosData.length;
+  };
+
+  // Create duplicated logos array to fill the marquee
+  const logosData = React.useMemo(() => {
+    const optimalCount = getOptimalLogoCount();
+    const duplicationsNeeded = Math.ceil(optimalCount / baseLogosData.length);
+
+    if (duplicationsNeeded <= 1) {
+      return baseLogosData;
+    }
+
+    const duplicatedLogos = [];
+    for (let i = 0; i < duplicationsNeeded; i++) {
+      duplicatedLogos.push(...baseLogosData.map((logo, index) => ({
+        ...logo,
+        // Add a unique identifier for React keys
+        _duplicateId: i,
+        _originalIndex: index
+      })));
+    }
+
+    return duplicatedLogos;
+  }, [baseLogosData, logoWidth]);
 
   // Determine if gradient should be shown
   const showGradient = gradientWidth > 0 && gradientColor !== 'transparent';
@@ -80,9 +119,9 @@ const LogoMarquee: React.FC<LogoMarqueeProps> = ({
 
   // Force visibility after component mount
   useEffect(() => {
-    // Pre-load all images
+    // Pre-load all images (only unique ones, not duplicates)
     const preloadImages = async () => {
-      const imagePromises = logosData.map((logo) => {
+      const imagePromises = baseLogosData.map((logo) => {
         return new Promise((resolve, reject) => {
           const img = new window.Image();
           img.src = logo.logoSrc;
@@ -90,7 +129,7 @@ const LogoMarquee: React.FC<LogoMarqueeProps> = ({
           img.onerror = reject;
         });
       });
-      
+
       try {
         // Wait for all images to load
         await Promise.all(imagePromises);
@@ -102,16 +141,16 @@ const LogoMarquee: React.FC<LogoMarqueeProps> = ({
         setIsVisible(true);
       }
     };
-    
+
     preloadImages();
-    
+
     // Fallback in case preloading takes too long
     const timer = setTimeout(() => {
       setIsVisible(true);
     }, 1000);
-    
+
     return () => clearTimeout(timer);
-  }, [logosData]);
+  }, [baseLogosData]);
 
   // Use Intersection Observer to detect when marquee is in viewport
   useEffect(() => {
@@ -161,49 +200,65 @@ const LogoMarquee: React.FC<LogoMarqueeProps> = ({
   // Function to determine the transform for each logo based on its position relative to hovered logo
   const getLogoTransform = (index: number) => {
     if (hoveredIndex === null) return '';
-    
+
     let baseTransform = '';
-    const totalLogos = logosData.length;
-    
+    const totalLogos = baseLogosData.length; // Use original count for hover effects
+
+    // Map the duplicated logo index back to original index for hover calculations
+    const originalIndex = logosData[index]._originalIndex !== undefined
+      ? logosData[index]._originalIndex
+      : index % totalLogos;
+    const originalHoveredIndex = logosData[hoveredIndex]._originalIndex !== undefined
+      ? logosData[hoveredIndex]._originalIndex
+      : hoveredIndex % totalLogos;
+
     // Calculate relative position with circular wrapping
-    // For example, if hovering last item, first item is considered "next"
-    const relativePosition = (totalLogos + index - hoveredIndex) % totalLogos;
-    
-    // If this is the hovered logo
+    const relativePosition = (totalLogos + originalIndex - originalHoveredIndex) % totalLogos;
+
+    // If this is the hovered logo (including its duplicates)
     if (relativePosition === 0) {
       baseTransform = 'scale(1.2)';
     }
-    // If this is the logo to the "left" of the hovered logo (could be last item if first is hovered)
+    // If this is the logo to the "left" of the hovered logo
     else if (relativePosition === totalLogos - 1) {
       baseTransform = 'translateX(-25px) scale(0.85)';
     }
-    // If this is the logo to the "right" of the hovered logo (could be first item if last is hovered)
+    // If this is the logo to the "right" of the hovered logo
     else if (relativePosition === 1) {
       baseTransform = 'translateX(25px) scale(0.85)';
     }
-    // For logos that are two positions away (with circular wrapping)
+    // For logos that are two positions away
     else if (relativePosition === totalLogos - 2 || relativePosition === 2) {
       baseTransform = 'scale(0.95)';
     }
-    
+
     return getResponsiveTransform(baseTransform);
   };
 
   // Function to determine the opacity for each logo based on its position relative to hovered logo
   const getLogoOpacity = (index: number) => {
     if (hoveredIndex === null) return 0.85;
-    
-    const totalLogos = logosData.length;
-    const relativePosition = (totalLogos + index - hoveredIndex) % totalLogos;
-    
+
+    const totalLogos = baseLogosData.length;
+
+    // Map the duplicated logo index back to original index for hover calculations
+    const originalIndex = logosData[index]._originalIndex !== undefined
+      ? logosData[index]._originalIndex
+      : index % totalLogos;
+    const originalHoveredIndex = logosData[hoveredIndex]._originalIndex !== undefined
+      ? logosData[hoveredIndex]._originalIndex
+      : hoveredIndex % totalLogos;
+
+    const relativePosition = (totalLogos + originalIndex - originalHoveredIndex) % totalLogos;
+
     if (relativePosition === 0) {
       return 1;
     }
-    
+
     if (relativePosition === 1 || relativePosition === totalLogos - 1) {
       return 0.7;
     }
-    
+
     return 0.85;
   };
 
@@ -259,38 +314,45 @@ const LogoMarquee: React.FC<LogoMarqueeProps> = ({
         direction={direction}
         className={getMarqueePadding()}
       >
-        {logosData.map((logo, index) => (
-          <Link 
-            href={logo.url}
-            key={index}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.logoItem}
-            onMouseEnter={() => !isMobile && setHoveredIndex(index)}
-            onMouseLeave={() => !isMobile && setHoveredIndex(null)}
-            aria-label={`Visit ${logo.name} website`}
-            style={{
-              transform: getLogoTransform(index),
-              zIndex: hoveredIndex === index ? 10 : 1
-            }}
-          >
-            <div className={styles.logoImageContainer}>
-              <Image
-                src={logo.logoSrc}
-                alt={`${logo.name} logo`}
-                width={isMobile ? logoWidth * 0.7 : isTablet ? logoWidth * 0.85 : logoWidth}
-                height={isMobile ? logoHeight * 0.7 : isTablet ? logoHeight * 0.85 : logoHeight}
-                className={styles.logoImage}
-                style={{ 
-                  opacity: getLogoOpacity(index)
-                }}
-                priority={index < 5}
-                loading="eager"
-                unoptimized={true}
-              />
-            </div>
-          </Link>
-        ))}
+        {logosData.map((logo, index) => {
+          // Create unique key for duplicated logos
+          const uniqueKey = logo._duplicateId !== undefined
+            ? `${logo._duplicateId}-${logo._originalIndex}`
+            : index;
+
+          return (
+            <Link
+              href={logo.url}
+              key={uniqueKey}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.logoItem}
+              onMouseEnter={() => !isMobile && setHoveredIndex(index)}
+              onMouseLeave={() => !isMobile && setHoveredIndex(null)}
+              aria-label={`Visit ${logo.name} website`}
+              style={{
+                transform: getLogoTransform(index),
+                zIndex: hoveredIndex === index ? 10 : 1
+              }}
+            >
+              <div className={styles.logoImageContainer}>
+                <Image
+                  src={logo.logoSrc}
+                  alt={`${logo.name} logo`}
+                  width={isMobile ? logoWidth * 0.7 : isTablet ? logoWidth * 0.85 : logoWidth}
+                  height={isMobile ? logoHeight * 0.7 : isTablet ? logoHeight * 0.85 : logoHeight}
+                  className={styles.logoImage}
+                  style={{
+                    opacity: getLogoOpacity(index)
+                  }}
+                  priority={index < 5}
+                  loading="eager"
+                  unoptimized={true}
+                />
+              </div>
+            </Link>
+          );
+        })}
       </Marquee>
     </div>
   );
