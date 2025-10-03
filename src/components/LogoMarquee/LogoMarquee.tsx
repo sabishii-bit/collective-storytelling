@@ -4,13 +4,22 @@ import React, { useState, useEffect, useRef } from 'react';
 import Marquee from 'react-fast-marquee';
 import Image from 'next/image';
 import Link from 'next/link';
-import { wineries } from './wineryData';
-import { distilleries } from './distilleryData';
-import { chocolatiers } from './chocolatierData';
-import { golfWineries } from './golfWineryData';
-import { golfDistilleries } from './golfDistilleryData';
-import { golfSponsors } from './golfSponsorData';
+import { wineries, WineryData } from './wineryData';
+import { distilleries, DistilleryData } from './distilleryData';
+import { chocolatiers, ChocolatierData } from './chocolatierData';
+import { golfWineries, GolfWineryData } from './golfWineryData';
+import { golfDistilleries, GolfDistilleryData } from './golfDistilleryData';
+import { golfSponsors, GolfSponsorData } from './golfSponsorData';
 import styles from './LogoMarquee.module.css';
+
+// Union type for all logo data types
+type BaseLogoData = WineryData | DistilleryData | ChocolatierData | GolfWineryData | GolfDistilleryData | GolfSponsorData;
+
+// Extended type for duplicated logos
+type ExtendedLogoData = BaseLogoData & {
+  _duplicateId?: number;
+  _originalIndex?: number;
+};
 
 interface LogoMarqueeProps {
   speed?: number;
@@ -59,7 +68,7 @@ const LogoMarquee: React.FC<LogoMarqueeProps> = ({
             : wineries;
 
   // Create duplicated logos array to fill the marquee
-  const logosData = React.useMemo(() => {
+  const logosData: ExtendedLogoData[] = React.useMemo(() => {
     // Calculate how many logos we need to fill the marquee without gaps
     const getOptimalLogoCount = () => {
       if (typeof window === 'undefined') return baseLogosData.length;
@@ -81,12 +90,12 @@ const LogoMarquee: React.FC<LogoMarqueeProps> = ({
     const duplicationsNeeded = Math.ceil(optimalCount / baseLogosData.length);
 
     if (duplicationsNeeded <= 1) {
-      return baseLogosData;
+      return baseLogosData as ExtendedLogoData[];
     }
 
-    const duplicatedLogos = [];
+    const duplicatedLogos: ExtendedLogoData[] = [];
     for (let i = 0; i < duplicationsNeeded; i++) {
-      duplicatedLogos.push(...baseLogosData.map((logo, index) => ({
+      duplicatedLogos.push(...baseLogosData.map((logo, index): ExtendedLogoData => ({
         ...logo,
         // Add a unique identifier for React keys
         _duplicateId: i,
