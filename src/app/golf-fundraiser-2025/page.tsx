@@ -13,11 +13,6 @@ export const metadata = {
 export default function GolfFundraiser2025Page() {
   const guestSpeakers = [
     {
-      name: 'Amit Elor',
-      role: 'Olympic Gold Medalist & Multi-time World Champion in Women\'s Freestyle Wrestling',
-      image: '/assets/img/2025_Event/guests/AmitElor.png'
-    },
-    {
       name: 'Spencer Christian',
       role: 'Broadcast Journalist & Former Weather Anchor for Good Morning America',
       image: '/assets/img/2025_Event/guests/SpencerChristian.jpg'
@@ -125,7 +120,6 @@ export default function GolfFundraiser2025Page() {
                       src={speaker.image}
                       alt={speaker.name}
                       className={`${styles.memberImage} ${
-                        speaker.name === 'Amit Elor' ? styles.memberImageAmit :
                         speaker.name === 'Spencer Christian' ? styles.memberImageSpencer : ''
                       }`}
                       width={300}
