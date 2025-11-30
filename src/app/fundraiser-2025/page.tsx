@@ -60,7 +60,7 @@ export default function Fundraiser2025Page() {
                     and appetizers. Don&apos;t miss our silent and live auctions!
                   </p>
                   <span className={`${styles.ticketButton} ${styles.disabled}`}>
-                    Purchase Tickets
+                    Event Has Ended
                   </span>
                   <p className={styles.ticketPrice}>General Admission: $200</p>
                   <p className={styles.ticketAdditional}>Special tastings and add-ons available during checkout</p>

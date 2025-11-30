@@ -499,6 +499,19 @@
     box-shadow: 0 7px 10px rgba(0, 0, 0, 0.15);
   }
 
+  &.disabled {
+    background-color: #ccc;
+    color: #999;
+    cursor: not-allowed;
+    box-shadow: none;
+
+    &:hover {
+      background-color: #ccc;
+      transform: none;
+      box-shadow: none;
+    }
+  }
+
   @media (max-width: 768px) {
     font-size: 1rem;
     padding: 0.75rem 2rem;

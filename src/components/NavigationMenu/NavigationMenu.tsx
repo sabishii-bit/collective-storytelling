@@ -53,29 +53,33 @@ const NavigationMenu: React.FC = () => {
           >
             Who We Are
           </button>
-          <button
-            onClick={() => handleNavigation("/upcoming-events")}
+          <a
+            href="https://csgi.betterworld.org/auctions/2025-end-year-auction"
+            target="_blank"
+            rel="noopener noreferrer"
             className="block text-lg text-left hover:text-gray-400"
           >
-            Upcoming Events
-          </button>
-          <button
-            onClick={() => handleNavigation("/golf-fundraiser-2025")}
-            className="block text-lg text-left hover:text-gray-400"
-          >
-            2025 Golf Fundraiser
-          </button>
+            2025 Year End Auction
+          </a>
 
           <div className="pt-4 border-t border-gray-700">
-            <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">
+            <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-4">
               Past Events
             </h3>
-            <button
-              onClick={() => handleNavigation("/fundraiser-2025")}
-              className="block text-base text-left hover:text-gray-400 ml-4"
-            >
-              2025 Napa Fundraiser
-            </button>
+            <div className="space-y-4">
+              <button
+                onClick={() => handleNavigation("/golf-fundraiser-2025")}
+                className="block text-base text-left hover:text-gray-400 ml-4"
+              >
+                2025 Golf Fundraiser
+              </button>
+              <button
+                onClick={() => handleNavigation("/fundraiser-2025")}
+                className="block text-base text-left hover:text-gray-400 ml-4"
+              >
+                2025 Napa Fundraiser
+              </button>
+            </div>
           </div>
         </nav>
       </div>

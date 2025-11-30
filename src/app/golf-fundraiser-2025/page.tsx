@@ -81,14 +81,9 @@ export default function GolfFundraiser2025Page() {
                     Enjoy great stories, wine and bourbon tastings paired with cheese and chocolates,
                     plus a silent auction and raffle to support Children&apos;s Hospital and mental health.
                   </p>
-                  <a
-                    href="https://csgi.betterworld.org/events/collective-storytelling-group?utm_source=qr&utm_medium=print"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.ticketButton}
-                  >
-                    Register Now
-                  </a>
+                  <span className={`${styles.ticketButton} ${styles.disabled}`}>
+                    Event Has Ended
+                  </span>
                   <div>
                     <p className={styles.ticketPrice}>Golf & Storytelling: $200</p>
                     <p className={styles.ticketAdditional}>Includes golf, cart, food and drinks on course, storytelling event, tastings, and 6 raffle tickets</p>
