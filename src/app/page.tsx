@@ -48,6 +48,7 @@ export default function HomePage() {
     <>
       <Banner />
       <About />
+
       <div style={{ padding: '40px 0' }}>
         <ImageSlideshow 
           images={slideshowImages} 

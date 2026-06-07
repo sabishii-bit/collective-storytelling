@@ -54,14 +54,13 @@ const NavigationMenu: React.FC = () => {
             Who We Are
           </button>
           <a
-            href="https://csgi.betterworld.org/auctions/2025-end-year-auction"
+            href="https://csgi.betterworld.org/events/2026-collective-storytelling-gro"
             target="_blank"
             rel="noopener noreferrer"
             className="block text-lg text-left hover:text-gray-400"
           >
-            2025 Year End Auction
+            Napa Storytelling Event 2026
           </a>
-
           <div className="pt-4 border-t border-gray-700">
             <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-4">
               Past Events
@@ -79,6 +78,14 @@ const NavigationMenu: React.FC = () => {
               >
                 2025 Napa Fundraiser
               </button>
+              <a
+                href="https://csgi.betterworld.org/auctions/2025-end-year-auction"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-base text-left hover:text-gray-400 ml-4"
+              >
+                2025 Year End Auction
+              </a>
             </div>
           </div>
         </nav>
